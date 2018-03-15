@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio1.View.PersonView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Lab 1 - Xamarin Cenfotec!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <!--<Label Text="My List of Clients:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />-->
+            <ListView x:Name="lstVClientes" ItemsSource="{Binding lstPersons}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <!--<Label Text="Client: " Font="20" TextColor="Black" />-->
+
+                                <Label Text="{Binding Name}" Font="22" TextColor="Black" >
+                                </Label>
+                                <Label Text="{Binding LastName}" Font="18" TextColor="Gray">
+                                </Label>
+                                <Label Text="{Binding SecondLastName}" Font="16" TextColor="Silver">
+                                </Label>
+                                <Image Source="InfoButton" HeightRequest="20" WidthRequest="20" Margin="5,5,5,5" HorizontalOptions="EndAndExpand" />
+                                <!--<ImageCell ImageSource="{Binding Picture}" Height="100"></ImageCell>-->
+                                <!--<Image Source="{Binding Picture}" HeightRequest="100" WidthRequest="80" Margin="5,5,5,5" HorizontalOptions="Center" />-->
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<ListView x:Name="lst">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="{Binding x:Path=ViewModel}" TextColor="Black" Font="22">
+                                </Label>
+                                <Label Text="{Binding Name}" Font="18" TextColor="Gray">
+                                </Label>
+                                <Label Text="{Binding LastName}" Font="18" TextColor="Gray">
+                                </Label>
+                                <Image Source="{Binding Image}" HeightRequest="70" WidthRequest="80" Margin="5,5,5,5" HorizontalOptions="EndAndExpand"></Image>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

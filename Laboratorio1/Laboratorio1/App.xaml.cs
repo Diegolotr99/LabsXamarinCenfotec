@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
-
+using Laboratorio1.View;
 namespace Laboratorio1
 {
 	public partial class App : Application
@@ -13,7 +13,7 @@ namespace Laboratorio1
 		{
 			InitializeComponent();
 
-			MainPage = new Laboratorio1.MainPage();
+			MainPage = new Laboratorio1.View.PersonView();
 		}
 
 		protected override void OnStart ()
