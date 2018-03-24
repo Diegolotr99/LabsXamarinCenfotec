@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Laboratorio1.View.PersonView">
+             x:Class="Laboratorio1.View.PersonView"
+             x:Name="PersonView">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Lab 1 - Xamarin Cenfotec!"
@@ -23,7 +24,13 @@
                                 </Label>
                                 <Label Text="{Binding SecondLastName}" Font="16" TextColor="Silver">
                                 </Label>
-                                <Image Source="InfoButton" HeightRequest="20" WidthRequest="20" Margin="5,5,5,5" HorizontalOptions="EndAndExpand" />
+                                <Image Source="{Binding Picture}" HeightRequest="80" WidthRequest="80" Margin="5,5,5,5" HorizontalOptions="EndAndExpand" >
+                                    <Image.GestureRecognizers>
+                                        <!--Si no fuera en un ListView: Command="{Binding SeePersonDetailCommand}"-->
+                                        <!--Solo se pondria el command directamente, como en un boton-->
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.SeePersonDetailCommand, Source={x:Reference PersonView}}" CommandParameter="{Binding IDPerson}" />
+                                    </Image.GestureRecognizers>
+                                </Image>
                                 <!--<ImageCell ImageSource="{Binding Picture}" Height="100"></ImageCell>-->
                                 <!--<Image Source="{Binding Picture}" HeightRequest="100" WidthRequest="80" Margin="5,5,5,5" HorizontalOptions="Center" />-->
                                 

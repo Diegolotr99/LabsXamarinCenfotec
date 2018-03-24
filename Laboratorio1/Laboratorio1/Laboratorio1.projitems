@@ -18,6 +18,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\Person.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Invoice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PersonViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)View\PersonDetailView.xaml.cs">
+      <DependentUpon>PersonDetailView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\PersonView.xaml.cs">
       <DependentUpon>PersonView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -25,6 +29,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PersonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PersonDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio1.View.PersonDetailView">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="LightBlue" Padding="10">
+                <Label Text="Client Details" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Font="28"  TextColor="Black" FontAttributes="Bold" Margin="0,10,0,10"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Fill">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" Padding="30">
+                    <StackLayout VerticalOptions="Center">
+                        <Image Source="{Binding ActualClient.Picture}" HeightRequest="100" WidthRequest="100" />
+                    </StackLayout>
+                    <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                        <Label Text="Name:" FontAttributes="Bold" />
+                        <Label Text="{Binding ActualClient.Name}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="Start">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="ID:" FontAttributes="Bold" />
+                        <Label Text="{Binding ActualClient.IDPerson}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="FullName:" FontAttributes="Bold" />
+                        <Label Text="{Binding ActualClient.FullName}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Phone Number:" FontAttributes="Bold"/>
+                        <Label Text="{Binding ActualClient.PhoneNumber}" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Email:" FontAttributes="Bold" />
+                        <Label Text="{Binding ActualClient.Email}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <ListView x:Name="lstVSales" ItemsSource="{Binding ActualClient.LstInvoice}">
+                    <ListView.Header>
+                        
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue" Padding="5,5,5,5">
+                                <Label Text="Client Sales" TextColor="Black" Font="24" HorizontalOptions="CenterAndExpand" Margin="-10,0,0,0" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="LightBlue" Padding="5,5,5,5">
+                                <Label Text="Sale ID" TextColor="Black" Font="20" HorizontalOptions="StartAndExpand" Margin="10,0,0,0"/>
+                                <Label Text="Description" TextColor="Black" Font="20" HorizontalOptions="CenterAndExpand"/>
+                                <Label Text="Sale Total $" TextColor="Black" Font="20" HorizontalOptions="EndAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+                                    <Label Text="{Binding ID}" TextColor="Gray" Font="18" HorizontalOptions="StartAndExpand" Margin="35,0,0,0" />
+                                    <Label Text="{Binding Description}" TextColor="Gray" Font="16" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"  />
+                                    <Label Text="{Binding Amount}" TextColor="Gray" Font="16" HorizontalOptions="EndAndExpand" Margin="0,0,40,0" />
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="10,10,10,10">
+                            <Button Text="Add Sale" BackgroundColor="Silver" TextColor="Black" FontAttributes="Bold" WidthRequest="160" HeightRequest="60" />
+                        </StackLayout>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

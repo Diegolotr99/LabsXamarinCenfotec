@@ -11,9 +11,9 @@ using Xamarin.Forms.Xaml;
 namespace Laboratorio1.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PersonView : ContentPage
+	public partial class PersonDetailView : ContentPage
 	{
-		public PersonView ()
+		public PersonDetailView ()
 		{
 			InitializeComponent ();
             BindingContext = PersonViewModel.GetInstance();
