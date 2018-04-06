@@ -21,21 +21,11 @@ namespace Laboratorio1.Model
         public string PhoneNumber { get; set; }
         public string Picture { get; set; }
         public string Email { get; set; }
-        public List<Invoice> LstInvoice{get; set;}
+        public ObservableCollection<Invoice> LstInvoice{get; set;}
 
         public string FullName => Name + " " + LastName;
         public double Age => (DateTime.Today - BirthDate).TotalDays/365.2425;
-        public List<Invoice> GetList() {
-
-            LstInvoice = new List<Invoice> {
-                new Invoice(),
-                new Invoice(),
-                new Invoice()
-            };
-
-            return LstInvoice;
-
-        }
+        
         public static async Task<ObservableCollection<Person>> GetPersons()
         {
             ObservableCollection<Person> LstPersons;
@@ -47,7 +37,7 @@ namespace Laboratorio1.Model
                 new Person(){IDPerson="102", Name="Francisco", LastName="Marin", SecondLastName="Hernandez", PhoneNumber="5845888", Picture="http://image.ibb.co/ekM1OS/if_supportmale_403020.png" },
                 new Person(){IDPerson="103", Name="Mario", LastName="Rivera", SecondLastName="Moya", PhoneNumber="275985885", Picture="http://image.ibb.co/fLYUcn/if_female1_403023.png" },
                 new Person(){IDPerson="104", Name="Raul", LastName="Trejos", SecondLastName="Espinoza", PhoneNumber="5655245254", Picture="http://image.ibb.co/jTurq7/if_maturewoman_628297_Cream.png" }};
-            Thread.Sleep(4000);
+           
             return LstPersons;
 
         }

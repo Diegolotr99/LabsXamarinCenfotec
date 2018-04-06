@@ -2,10 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Laboratorio1.View.PersonView"
-             x:Name="PersonView">
+             x:Name="PersonView"
+             Title="PersonView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Lab 1 - Xamarin Cenfotec!"
+            <Label Text="Welcome to Labs - Xamarin Cenfotec!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <!--<Label Text="My List of Clients:"

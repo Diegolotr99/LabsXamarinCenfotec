@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio1.View.NewInvoicePage"
+             x:Name="NewInvoicePage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout HorizontalOptions="Center" Margin="0,0,0,20" >
+                <Label Text="{Binding AddEditModeTitle}" Font="28" TextColor="Black" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Vertical" BackgroundColor="LightGray">
+                <StackLayout Orientation="Vertical" Padding="5,10" HorizontalOptions="Center">
+                    <Label Text="Invoice ID:" Font="22" FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text="{Binding IDNewInvoice}" Font="20" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="5,10" HeightRequest="100">
+                    <Label Text="Description:" Font="22" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+                    <Editor Text="{Binding DescriptionNewInvoice}" BackgroundColor="Snow" FontSize="Medium" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical"  Padding="5,10">
+                    <Label Text="Amount ($):" Font="22" FontAttributes="Bold"  HorizontalOptions="Center" TextColor="Black"/>
+                    <Entry Text="{Binding AmountNewInvoice}" BackgroundColor="Snow" FontSize="Large" Keyboard="Numeric"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                 </StackLayout>
+                <StackLayout Orientation="Vertical" Padding="5,10">
+                    <Label Text="Type:" Font="22" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black" />
+                    <Picker x:Name="NewTypeInvoice" BackgroundColor="Snow" Title="Select a Sale Type"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                            SelectedItem="{Binding TypeNewInvoice}" >
+                        <Picker.Items>
+                            <x:String>In Store</x:String>
+                            <x:String>By Phone</x:String>
+                            <x:String>Online Sale</x:String>
+                        </Picker.Items>
+                    </Picker>
+                 </StackLayout>
+           </StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="Snow" HorizontalOptions="Center">
+                <Button Text="Add/Save" Command="{Binding AddNewInvoiceToPersonCommand}"  HeightRequest="100" WidthRequest="200" BackgroundColor="LightSkyBlue"  />
+                <Button Text="Cancel" HeightRequest="100" WidthRequest="200" BackgroundColor="LightSkyBlue" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

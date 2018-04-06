@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Laboratorio1.View.MenuContent"
+             Title="PersonView">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <!--<Image Source="{Binding CurrentUser.Picture}" HeightRequest="80" WidthRequest="80" Margin="5,5,5,5" HorizontalOptions="EndAndExpand" />-->
+                <Image Source="{Binding ActualClient.Picture}" HeightRequest="80" WidthRequest="80" Margin="20,5,5,5" HorizontalOptions="Start" />
+                <Label Text="{Binding ActualClient.FullName}" Font="16" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+
+            </StackLayout>
+            <StackLayout Orientation="Vertical" BackgroundColor="SlateGray">
+                <ListView ItemsSource="{Binding InitialMenu}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<ImageCell ImageSource="{Binding Logo}" Text="{Binding Text}"  />-->
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <!--<StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer  Command="{Binding Path=BindingContext.SeeCharacterCommand, Source={x:Reference MainPage}}" CommandParameter="{Binding Name}"/>
+                                    </StackLayout.GestureRecognizers>-->
+                                    <Image Source="{Binding Logo}" HeightRequest="38" WidthRequest="38" Margin="25,10,10,10" HorizontalOptions="Start"></Image>
+                                    <Label Text="{Binding Text}" TextColor="Snow" Font="16" Margin="0,10,0,10" HorizontalOptions="StartAndExpand"  VerticalOptions="Center"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

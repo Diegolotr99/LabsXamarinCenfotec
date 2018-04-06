@@ -13,8 +13,15 @@ namespace Laboratorio1
 		{
 			InitializeComponent();
 
-			MainPage = new Laboratorio1.View.PersonView();
-		}
+			
+            NavigationPage navigation = new NavigationPage(new PersonView());
+
+            App.Current.MainPage = new MasterDetailPage
+            {
+                Master = new MenuContent(),
+                Detail = navigation
+            };
+        }
 
 		protected override void OnStart ()
 		{
